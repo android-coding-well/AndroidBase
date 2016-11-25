@@ -1,16 +1,5 @@
 package com.junmeng.base.adapter.binding;
 
-import android.databinding.BindingAdapter;
-import android.databinding.BindingConversion;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * 此类实现databinding的自定义属性
  * 此类对放置位置没有任何要求
@@ -19,7 +8,7 @@ import java.util.Date;
  */
 public class CustomBindingAdapter {
 
-    //当BindingAdapter里的参数满足条件时会执行以下方法
+   /* //当BindingAdapter里的参数满足条件时会执行以下方法
     @BindingAdapter({"imageUrl","placeholder"})
     public static void loadImage(ImageView imageView, String url, Drawable placeholder){
         Glide.with(imageView.getContext())
@@ -57,7 +46,7 @@ public class CustomBindingAdapter {
     public static ColorDrawable convertColorToDrawable(int color) {
         return new ColorDrawable(color);
 
-    }
+    }*/
 
 
 
