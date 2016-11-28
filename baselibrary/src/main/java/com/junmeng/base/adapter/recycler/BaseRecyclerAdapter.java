@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,13 +28,12 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
 
     private static final String TAG = "BaseRecyclerAdapter";
     public Context context;
-    public List<T> list;
+    public List<T> list = new ArrayList<T>();
     private OnItemClickListener<T> mOnItemClickLitener;
     private OnItemLongClickListener<T> mOnItemLongClickLitener;
 
-    public BaseRecyclerAdapter(Context context, @NonNull List<T> list) {
+    public BaseRecyclerAdapter(Context context) {
         this.context = context.getApplicationContext();
-        this.list = list;
     }
 
     /**
@@ -109,5 +109,24 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
         return list == null ? 0 : list.size();
     }
 
+
+    public void addAllData(@NonNull List<T> list) {
+        this.list.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    public void addData(@NonNull T t) {
+        this.list.add(t);
+        notifyDataSetChanged();
+    }
+
+    public void clearData() {
+        this.list.clear();
+        notifyDataSetChanged();
+    }
+
+    public List<T> getData(){
+        return this.list;
+    }
 
 }
