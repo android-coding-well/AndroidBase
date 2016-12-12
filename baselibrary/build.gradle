@@ -35,7 +35,7 @@ dependencies {
    // })
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
    // testCompile "junit:junit:$rootProject.junitVersion"
-    compile 'com.github.huweijian5:AndroidUtils:1.0.3'
+    compile 'com.github.huweijian5:AndroidUtils:1.0.4'
     compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
 }
 
