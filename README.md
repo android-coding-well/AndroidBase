@@ -3,7 +3,7 @@ android 基础库
 
 ## JavaDoc文档
 
-* [在线JavaDoc](https://jitpack.io/com/github/huweijian5/AndroidBase/1.0.0/javadoc/index.html)
+* [在线JavaDoc](https://jitpack.io/com/github/huweijian5/AndroidBase/1.0.3/javadoc/index.html)
 * 网址：`https://jitpack.io/com/github/huweijian5/AndroidBase/[VersionCode]/javadoc/index.html`
 * 其中[VersionCode](https://github.com/huweijian5/AndroidBase/releases)请替换为最新版本号
 * 注意文档使用UTF-8编码，如遇乱码，请在浏览器选择UTF-8编码即可
