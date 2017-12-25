@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.junmeng.base.BuildConfig;
 
 
 public abstract class BaseFragment extends Fragment {
@@ -83,7 +85,7 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
-    public void showLongToast(final int resId) {
+    public void showLongToast(@StringRes  final int resId) {
         if (getActivity() != null) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -107,7 +109,7 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    public void showShortToast(final int resId) {
+    public void showShortToast(@StringRes final int resId) {
         if (getActivity() != null) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -115,6 +117,28 @@ public abstract class BaseFragment extends Fragment {
                     Toast.makeText(getActivity(), resId, Toast.LENGTH_LONG).show();
                 }
             });
+        }
+    }
+
+    /**
+     * 显示测试Toast,只在debug下生效
+     *
+     * @param msg
+     */
+    public void showDebugToast(final String msg) {
+        if (BuildConfig.DEBUG) {
+            showShortToast(msg);
+        }
+    }
+
+    /**
+     * 显示测试Toast,只在debug下生效
+     *
+     * @param resId
+     */
+    public void showDebugToast(@StringRes final int resId) {
+        if (BuildConfig.DEBUG) {
+            showShortToast(resId);
         }
     }
 

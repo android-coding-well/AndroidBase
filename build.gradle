@@ -3,10 +3,14 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -16,6 +20,7 @@ allprojects {
     repositories {
         jcenter()
         maven { url "https://jitpack.io" }
+        google()
     }
 }
 
@@ -25,11 +30,11 @@ task clean(type: Delete) {
 ext{
     minSdkVersion = 16
     targetSdkVersion = 25
-    compileSdkVersion = 25
-    buildToolsVersion = '25.0.1'
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
 
     // App dependencies
-    supportLibraryVersion = '25.0.1'
+    supportLibraryVersion = '26.1.0'
     junitVersion = '4.12'
     espressoVersion = '2.2.2'
 }

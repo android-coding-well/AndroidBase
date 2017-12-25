@@ -157,18 +157,22 @@ public abstract class BaseSurfaceView extends SurfaceView implements SurfaceHold
             while (isRunning) {
                 try {
                     canvas = surfaceHolder.lockCanvas();
-                    drawBackground(canvas);
-                    doDraw(canvas);
-
-                    if (drawPauseTime > 0) {
-                        Thread.sleep(drawPauseTime);//通过它来控制帧数执行一次绘制后休息50ms)
+                    //Log.i(TAG, "" + canvas);
+                    if (canvas != null) {
+                        drawBackground(canvas);
+                        doDraw(canvas);
+                        if (drawPauseTime > 0) {
+                            Thread.sleep(drawPauseTime);//通过它来控制帧数执行一次绘制后休息50ms)
+                        }
+                    }else{
+                        Thread.sleep(100);//避免空转完全占用CPU
                     }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
                     if (canvas != null) {
                         surfaceHolder.unlockCanvasAndPost(canvas);
-
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
 

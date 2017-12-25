@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
+ * 适用于DataBinding的RecyclerView.ViewHolder
  * Created by hwj on 2016/11/9.
  */
 

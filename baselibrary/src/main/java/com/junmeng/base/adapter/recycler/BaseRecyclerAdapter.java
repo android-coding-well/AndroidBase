@@ -110,21 +110,49 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<Recycl
     }
 
 
+    /**
+     * 添加数据（不清空旧数据）
+     * @param list
+     */
     public void addAllData(@NonNull List<T> list) {
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
+    /**
+     * 添加数据
+     * @param list
+     * @param isClearOld 是否清空旧数据
+     */
+    public void addAllData(@NonNull List<T> list,boolean isClearOld) {
+        if(isClearOld){
+            this.list.clear();
+        }
+        this.list.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * 添加数据
+     * @param t
+     */
     public void addData(@NonNull T t) {
         this.list.add(t);
         notifyDataSetChanged();
     }
 
+    /**
+     * 清空数据
+     */
     public void clearData() {
         this.list.clear();
         notifyDataSetChanged();
     }
 
+    /**
+     * 获取数据
+     * @return
+     */
     public List<T> getData(){
         return this.list;
     }

@@ -1,5 +1,20 @@
 # AndroidBase
-android 基础库
+android 基础库，为了简化代码而生
+
+## 说明
+* 1.1版本组件逐渐独立出来，因此不兼容1.0版本
+* 提供Activity,Fragment基类
+* 对DataBinding进行封装
+* 提供CommonAdapter,BaseRecyclerAdapter
+* 提供BaseSurfaceView(后期考虑独立出来)
+* 提供NoSlidingViewPager(后期考虑独立出来)
+* 提供VerticalSeekBar(后期考虑独立出来)
+* 提供ProgressWebViewClient(后期考虑独立出来)
+* ColorSnackbar已独立出来，不再包含此库
+* AutoCompleteTextViewExtend已独立出来，不再包含此库
+* RecyclerViewExtend已独立出来，不再包含此库
+* SegmentBar已独立出来，不再包含此库
+* ...
 
 ## JavaDoc文档
 
@@ -10,7 +25,7 @@ android 基础库
 
 ---
 
-## 说明
+## 注意
 
 * 为了避免引入第三方库导致工程依赖多个版本的问题，如android support库
 * 故建议在个人的工程目录下的build.gradle下加入以下变量，具体请看此[build.gradle](https://github.com/huweijian5/AndroidBase/blob/master/build.gradle)
@@ -26,7 +41,7 @@ ext{
     junitVersion = '4.12'
     espressoVersion = '2.2.2'
 }
-```	
+```
 * 请注意，对于此库已有的变量，命名请保持一致
 
 ## 引用
